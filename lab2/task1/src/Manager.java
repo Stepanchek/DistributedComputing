@@ -18,6 +18,6 @@ public class Manager {
     }
 
     public void bearFound(){
-        bearFound = false;
+        bearFound = true;
     }
 }
