@@ -1,16 +1,10 @@
 package org.example;
 
-import org.example.Editors.AddEditor;
-import org.example.Editors.DeleteEditor;
-import org.example.Selectors.NameSelector;
-import org.example.Selectors.PhoneSelector;
-import org.example.Selectors.Selector;
-import org.example.Util.Constants;
-import org.example.Util.PathBuilder;
-
+import org.example.Util.*;
+import org.example.Selectors.*;
+import org.example.Editors.*;
 import java.util.Objects;
 import java.util.Random;
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Database database = new Database(PathBuilder.getPath(".", "src", "main", "java", "org", "example", "database.txt"));
