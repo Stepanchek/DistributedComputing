@@ -1,0 +1,31 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Manager">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Author" type="Author" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Author">
+        <xs:sequence>
+            <xs:element name="Book" type="Book" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+        <xs:attribute name="id" type="UUID"/>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="Book">
+        <xs:attribute name="id" type="UUID"/>
+        <xs:attribute name="authorId" type="UUID"/>
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="price" type="xs:decimal"/>
+    </xs:complexType>
+
+    <xs:simpleType name="UUID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
