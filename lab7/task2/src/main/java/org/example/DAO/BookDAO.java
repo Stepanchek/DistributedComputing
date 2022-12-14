@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public class BookDAO {
     public Optional<Book> findById(Long id) {
-        final String sql = "SELECT * FROM players WHERE id = ?";
+        final String sql = "SELECT * FROM books WHERE bookId = ?";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -21,8 +21,8 @@ public class BookDAO {
             try (ResultSet rs = statement.executeQuery();) {
                 if (rs.next()) {
                     Book book = new Book();
-                    book.setId(rs.getLong("id"));
-                    book.setAuthorId(rs.getLong("team_id"));
+                    book.setId(rs.getLong("bookId"));
+                    book.setAuthorId(rs.getLong("authorId"));
                     book.setName(rs.getString("name"));
                     book.setPrice(rs.getBigDecimal("price"));
                     result = Optional.of(book);
@@ -36,7 +36,7 @@ public class BookDAO {
     }
 
     public List<Book> findAll() {
-        final String sql = "SELECT * FROM players";
+        final String sql = "SELECT * FROM books";
 
         try (Connection connection = Connector.getConnection();
              Statement statement = connection.createStatement()) {
@@ -46,8 +46,8 @@ public class BookDAO {
             try (ResultSet rs = statement.executeQuery(sql)) {
                 while (rs.next()) {
                     Book book = new Book();
-                    book.setId(rs.getLong("id"));
-                    book.setAuthorId(rs.getLong("team_id"));
+                    book.setId(rs.getLong("bookId"));
+                    book.setAuthorId(rs.getLong("authorId"));
                     book.setName(rs.getString("name"));
                     book.setPrice(rs.getBigDecimal("price"));
                     result.add(book);
@@ -61,7 +61,7 @@ public class BookDAO {
     }
 
     public boolean update(Book updated) {
-        final String sql = "UPDATE players SET team_id = ?, name = ?, price = ? WHERE id = ?";
+        final String sql = "UPDATE books SET authorId = ?, name = ?, price = ? WHERE bookId = ?";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -79,7 +79,7 @@ public class BookDAO {
     }
 
     public boolean deleteById(Long id) {
-        final String sql = "DELETE FROM players WHERE id = ?";
+        final String sql = "DELETE FROM books WHERE authorId = ?";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -94,7 +94,7 @@ public class BookDAO {
     }
 
     public boolean insert(Book toInsert) {
-        final String sql = "INSERT INTO football.players(team_id, name, price) VALUES(?, ?, ?)";
+        final String sql = "INSERT INTO sus.books(authorId, name, price) VALUES(?, ?, ?)";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {

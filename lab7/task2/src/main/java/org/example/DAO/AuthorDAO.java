@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public class AuthorDAO {
     public Optional<Author> findById(Long id) {
-        final String sql = "SELECT * FROM teams WHERE id = ?";
+        final String sql = "SELECT * FROM authors WHERE authorId = ?";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -21,7 +21,7 @@ public class AuthorDAO {
             try (ResultSet rs = statement.executeQuery();) {
                 if (rs.next()) {
                     Author author = new Author();
-                    author.setId(rs.getLong("id"));
+                    author.setId(rs.getLong("authorId"));
                     author.setName(rs.getString("name"));
                     result = Optional.of(author);
                 }
@@ -34,7 +34,7 @@ public class AuthorDAO {
     }
 
     public List<Author> findAll() {
-        final String sql = "SELECT * FROM teams";
+        final String sql = "SELECT * FROM authors";
 
         try (Connection connection = Connector.getConnection();
              Statement statement = connection.createStatement()) {
@@ -44,7 +44,7 @@ public class AuthorDAO {
             try (ResultSet rs = statement.executeQuery(sql)) {
                 while (rs.next()) {
                     Author author = new Author();
-                    author.setId(rs.getLong("id"));
+                    author.setId(rs.getLong("authorId"));
                     author.setName(rs.getString("name"));
                     result.add(author);
                 }
@@ -57,7 +57,7 @@ public class AuthorDAO {
     }
 
     public boolean update(Author updated) {
-        final String sql = "UPDATE teams SET name = ?, country = ? WHERE id = ?";
+        final String sql = "UPDATE authors SET name = ? WHERE authorId = ?";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -73,7 +73,7 @@ public class AuthorDAO {
     }
 
     public boolean deleteById(Long id) {
-        final String sql = "DELETE FROM teams WHERE id = ?";
+        final String sql = "DELETE FROM authors WHERE authorId = ?";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -88,7 +88,7 @@ public class AuthorDAO {
     }
 
     public boolean insert(Author toInsert) {
-        final String sql = "INSERT INTO teams(name, country) VALUES(?, ?)";
+        final String sql = "INSERT INTO authors(name) VALUES(?)";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {

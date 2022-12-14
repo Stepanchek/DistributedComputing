@@ -12,26 +12,21 @@ public class Main {
         AuthorDAO authorDAO = new AuthorDAO();
         BookDAO bookDAO = new BookDAO();
 
-        //delete Shakespeare book
-        bookDAO.deleteById(9L);
-        bookDAO.deleteById(10L);
+        // Delete Erich Maria Remark
+        authorDAO.deleteById(3L);
 
-        //Delete Shakhtar
-        authorDAO.deleteById(1L);
+        bookDAO.deleteById(17L);
 
-        //Add to PSG
-        bookDAO.insert(new Book(null, 4L, "Neymar", BigDecimal.valueOf(20320)));
+        // add 
+        bookDAO.update(new Book(6L, 2L, "Three friends", BigDecimal.ONE));
 
-        //Update Bushan
-        bookDAO.update(new Book(1L, 2L, "Georgy", BigDecimal.ONE));
+        // add Tolkien
+        authorDAO.insert(new Author(null, "J. Tolkien"));
 
-        //Add Milano
-        authorDAO.insert(new Author(null, "Milano"));
+        // update Franko
+        authorDAO.update(new Author(8L, "Ivan Franko"));
 
-        //Update Dynamo
-        authorDAO.update(new Author(2L, "Dynamo Kyiv"));
-
-        //Delete Besedin
-        bookDAO.deleteById(3L);
+        // delete The Running Man
+        bookDAO.deleteById(12L);
     }
 }
