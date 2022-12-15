@@ -21,28 +21,28 @@ public class Main {
 
         System.out.println("Connected");
 
-        client.deleteBook(9L);
+       // client.deleteBook(9L);
 
         //Seneca
-        client.deleteAuthor(1L);
+        client.deleteAuthor(10L);
 
         //Add to Steven King
-        client.insertBook(new Book(null, 4L, "Lord of the Ring", BigDecimal.valueOf(1550)));
+        //client.insertBook(new Book(null, 4L, "Lord of the Ring", BigDecimal.valueOf(1550)));
 
         //Update How to die
-        client.updateBook(new Book(4L, 1L, "How to cry", BigDecimal.ONE));
+        //client.updateBook(new Book(4L, 1L, "How to cry", BigDecimal.ONE));
 
         //Add Zhadan
-        client.insertAuthor(new Author(null, "Sergiy Zhadan"));
+       // client.insertAuthor(new Author(null, "Sergiy Zhadan"));
 
         //Delete Night in Lisbon
-        client.deleteBook(10L);
+        //client.deleteBook(10L);
 
         //Move King of Lir to Remark
-        client.moveToAnotherAuthor(5L, 3L);
+       // client.moveToAnotherAuthor(5L, 3L);
 
         //Remark`s books
-        System.out.println(client.findBooksByAuthorName("Erich Maria Remark"));
+       // System.out.println(client.findBooksByAuthorName("Erich Maria Remark"));
 
         client.disconnect();
     }

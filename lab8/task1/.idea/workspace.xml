@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="8e15485f-04e8-4ede-b47f-287e5bcc8b68" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task2/src/main/java/org/example/client/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/src/main/java/org/example/client/MainClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task2/src/main/java/org/example/models/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/src/main/java/org/example/models/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task2/src/main/java/org/example/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../task2/src/main/java/org/example/models/Book.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +58,7 @@
       <recent name="D:\DistributedComputing\lab8\task1\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.server.Server">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="task1" />
@@ -100,7 +106,7 @@
       <updated>1670987545085</updated>
       <workItem from="1670987546867" duration="1252000" />
       <workItem from="1671024280289" duration="10900000" />
-      <workItem from="1671047018317" duration="4097000" />
+      <workItem from="1671047018317" duration="5304000" />
     </task>
     <servers />
   </component>
