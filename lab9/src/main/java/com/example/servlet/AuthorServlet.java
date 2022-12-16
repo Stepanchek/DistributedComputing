@@ -73,7 +73,7 @@ public class AuthorServlet extends HttpServlet {
 
     private void deleteTeam(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        Long id = Long.parseLong(request.getParameter("id"));
+        Long id = Long.parseLong(request.getParameter("authorId"));
         authorDao.deleteById(id);
         response.sendRedirect("AuthorList");
     }

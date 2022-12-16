@@ -15,10 +15,10 @@ public class Main {
         // Delete Erich Maria Remark
         authorDAO.deleteById(3L);
 
-        bookDAO.deleteById(17L);
+        bookDAO.deleteById(18L);
 
         // add 
-        bookDAO.update(new Book(6L, 2L, "Three friends", BigDecimal.ONE));
+        bookDAO.update(new Book(7L, 5L, "Four friends", BigDecimal.ONE));
 
         // add Tolkien
         authorDAO.insert(new Author(null, "J. Tolkien"));

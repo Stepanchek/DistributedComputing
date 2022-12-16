@@ -94,7 +94,7 @@ public class BookDAO {
     }
 
     public boolean insert(Book toInsert) {
-        final String sql = "INSERT INTO sus.books(authorId, name, price) VALUES(?, ?, ?)";
+        final String sql = "INSERT INTO books(authorId, name, price) VALUES(?, ?, ?)";
 
         try (Connection connection = Connector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
